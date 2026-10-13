@@ -29,8 +29,20 @@ def histogramme(notes):
     n = 0
     while n < 20:
         etoiles = ['*' for i in notes if i>n and i<=n+4]    # creation des liste *
-        print(f"{n}-{n+[4 if n<15 else 5]} \t | \t {len(etoiles)*'*'}")
+        print(f"{n}-{n+(4 if n<15 else 5)} \t | \t {len(etoiles)*'*'}")
         n+=5
-
 histogramme(notes)
-        
+
+# 6
+print("-----6-----")
+def rang(notes, note):
+    tmp = sorted(notes, reverse=True)
+    print(f"Rang de {note} : {tmp.index(note)+1}")
+rang(notes, 14)
+
+# 7
+print("-----7-----")
+sup = [15, 6, 18]
+notes.extend(sup)
+ord = set()
+notes = [x for x in notes if x not in ord and not ord]
